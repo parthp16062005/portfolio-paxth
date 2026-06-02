@@ -23,7 +23,7 @@ async function generateCaption() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${GROQ_KEY}`
+        'Authorization': `Bearer ${API_KEY}`  
       },
       body: JSON.stringify({
         model: 'llama-3.1-8b-instant',
