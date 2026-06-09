@@ -9,6 +9,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) lenis.scrollTo(target, { offset: -80, duration: 1.8 });
   });
 });
+// ── LOADER ──
+document.body.style.overflow = 'hidden';
+
+const hideLoader = () => {
+  const loader = document.getElementById('loader');
+  if (!loader) return;
+  loader.classList.add('hide');
+  document.body.style.overflow = '';
+};
+
+// fires fast — doesn't wait for video
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(hideLoader, 2000);
+});
 // ── AMBIENT AUDIO ──
 const audio       = document.getElementById('ambient-audio');
 const audioToggle = document.getElementById('audio-toggle');
