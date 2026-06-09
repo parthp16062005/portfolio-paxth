@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(hideLoader, 1200);
 });
 
+// force restore scroll in all cases
+setTimeout(() => {
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+}, 3000);
 window.addEventListener('load', () => {
   scramble();
 });
