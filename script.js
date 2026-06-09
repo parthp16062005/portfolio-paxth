@@ -292,4 +292,4 @@ function scramble() {
 }
 
 // run after loader hides
-setTimeout(scramble, 2000);
+setTimeout(scramble, 2600);
