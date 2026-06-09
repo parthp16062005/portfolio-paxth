@@ -31,15 +31,6 @@ audioToggle.addEventListener('click', () => {
     audioIcon.classList.add('paused');
   }
 });
-// ── LOADER ──
-document.body.style.overflow = 'hidden';
-
-const hideLoader = () => {
-  const loader = document.getElementById('loader');
-  if (!loader) return;
-  loader.classList.add('hide');
-  document.body.style.overflow = '';
-};
 
 // fire on DOMContentLoaded (much earlier than load)
 document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1800));
