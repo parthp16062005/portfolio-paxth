@@ -32,17 +32,20 @@ audioToggle.addEventListener('click', () => {
   }
 });
 // ── LOADER ──
-// ── LOADER ──
 document.body.style.overflow = 'hidden';
 
-// force hide after 2.5s no matter what
 const hideLoader = () => {
   const loader = document.getElementById('loader');
-  if (loader) {
-    loader.classList.add('hide');
-    document.body.style.overflow = '';
-  }
+  if (!loader) return;
+  loader.classList.add('hide');
+  document.body.style.overflow = '';
 };
+
+// fire on DOMContentLoaded (much earlier than load)
+document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1800));
+
+// double fallback — no matter what, dismiss after 3s
+setTimeout(hideLoader, 3000);
 
 // try on load, but force after 2.5s
 window.addEventListener('load', () => setTimeout(hideLoader, 1800));
