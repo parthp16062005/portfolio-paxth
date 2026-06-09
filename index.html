@@ -5,19 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>paxth.jpg</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Bebas+Neue&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet"/>
 </head>
 <body>
+  <!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">paxth<span>.jpg</span></div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+</div>
+<!-- AMBIENT AUDIO -->
+<audio id="ambient-audio" loop>
+  <source src="assets/audio/ambient.mp3" type="audio/mpeg"/>
+</audio>
+
+<!-- AUDIO TOGGLE -->
+<div class="audio-toggle" id="audio-toggle" title="Toggle ambient sound">
+  <div class="audio-icon playing" id="audio-icon">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
 
   <!-- NAV -->
   <nav id="navbar">
-    <div class="nav-logo">paxth.jpg</div>
+    <div class="nav-logo">paxth<span>.jpg</span></div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#ai-caption">AI Tools</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <a href="#contact" class="nav-cta">Contact Me</a>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
@@ -30,138 +53,303 @@
       <source src="assets/video/hero-bg.mp4" type="video/mp4"/>
     </video>
     <div class="hero-content">
-      <p class="hero-sub">Photography & Filmmaking</p>
-      <h1 class="hero-title">paxth.jpg</h1>
+      <p class="hero-sub"><span class="hero-sub-line"></span>Photography & Filmmaking<span class="hero-sub-line"></span></p>
+      <h1 class="hero-title">paxth<em>.jpg</em></h1>
       <p class="hero-tagline">Capturing light. Crafting stories.</p>
-      <a href="#work" class="hero-btn">View My Work</a>
+      <div class="hero-actions">
+        <a href="#work" class="hero-btn">View My Work <span class="btn-arrow">↗</span></a>
+        <a href="#contact" class="hero-btn-ghost">Get in Touch</a>
+      </div>
     </div>
-    <div class="scroll-hint">↓</div>
+    <div class="hero-bottom-bar">
+      <span>Based in India</span>
+      <span class="avail-dot">●</span>
+      <span>Available for projects</span>
+    </div>
+    <div class="scroll-hint">
+      <span class="scroll-line"></span>
+      <span>Scroll</span>
+    </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" data-scroll>
     <div class="container about-grid">
       <div class="about-left">
         <span class="section-label">About</span>
-        <h2>Vision behind <em>the lens</em></h2>
+        <h2>Vision behind<br><em>the lens</em></h2>
+       
       </div>
       <div class="about-right">
-        <p>I'm a photographer and filmmaker who chases raw, cinematic moments — the kind that feel like frames from a film you never want to end. Based in India, working everywhere.</p>
-        <p>Every frame is intentional. Every cut is felt.</p>
-        <a href="https://instagram.com/paxth.jpg" target="_blank" class="ig-link">@paxth.jpg on Instagram ↗</a>
+        <p class="about-lead">I'm a photographer and filmmaker who chases raw, cinematic moments — the kind that feel like frames from a film you never want to end.</p>
+        <p>Based in India, working everywhere. Every frame is intentional. Every cut is felt. I don't just document — I translate emotion into light and motion.</p>
+        <a href="https://instagram.com/paxth.jpg" target="_blank" class="ig-link">@paxth.jpg on Instagram <span>↗</span></a>
       </div>
     </div>
   </section>
-
- <!-- FILTER BUTTONS -->
-<div class="gallery-filter">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="photo">Photos</button>
-</div>
-
-<div class="gallery-grid" id="gallery">
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC03383~2.jpg','photo')">
-    <img src="assets/images/DSC03383~2.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC03447~2.jpg','photo')">
-    <img src="assets/images/DSC03447~2.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC03453~2.jpg','photo')">
-    <img src="assets/images/DSC03453~2.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC09002.jpg','photo')">
-    <img src="assets/images/DSC09002.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC09912~2.jpg','photo')">
-    <img src="assets/images/DSC09912~2.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/IMG_2698~2.jpg','photo')">
-    <img src="assets/images/IMG_2698~2.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/IMG_3014~3.jpg','photo')">
-    <img src="assets/images/IMG_3014~3.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/IMG_20260114_200329192~3.jpg','photo')">
-    <img src="assets/images/IMG_20260114_200329192~3.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
-  </div>
-  <div class="gallery-item photo" onclick="openLightbox('assets/images/Snapchat-1670874999.jpg','photo')">
-    <img src="assets/images/Snapchat-1670874999.jpg" alt=""/><div class="gallery-overlay"><span>↗</span></div>
+  <!-- MARQUEE STRIP -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Photography</span><em>✦</em>
+    <span>Filmmaking</span><em>✦</em>
+    <span>Post Production</span><em>✦</em>
+    <span>Color Grading</span><em>✦</em>
+    <span>Visual Storytelling</span><em>✦</em>
+    <span>India & Beyond</span><em>✦</em>
+    <span>paxth.jpg</span><em>✦</em>
+    <span>Photography</span><em>✦</em>
+    <span>Filmmaking</span><em>✦</em>
+    <span>Post Production</span><em>✦</em>
+    <span>Color Grading</span><em>✦</em>
+    <span>Visual Storytelling</span><em>✦</em>
+    <span>India & Beyond</span><em>✦</em>
+    <span>paxth.jpg</span><em>✦</em>
   </div>
 </div>
 
-<!-- FILMS DRIVE SECTION -->
-<div class="films-drive">
-  <div class="films-drive-inner">
-    <p class="films-label">Filmmaking</p>
-    <h3>Watch My <em>Films</em></h3>
-    <p class="films-desc">A curated collection of cinematic short films, reels and visual stories.</p>
-    <a href="https://drive.google.com/drive/folders/1QfuvaV1WxDFEGdHLjxloQjUGf_GaItEl" target="_blank" class="films-btn">
-      View All Films ↗
-    </a>
-  </div>
-  <div class="films-drive-bg"></div>
-</div>
+  <!-- WORK -->
+  <section id="work" data-scroll>
+    <div class="container work-header">
+      <div>
+        <span class="section-label">Work</span>
+        <h2>Selected <em>Frames</em></h2>
+      </div>
+      <p class="work-desc">A curated selection of stills that hold emotion long after the shutter closes.</p>
+    </div>
+
+    <!-- FILTER -->
+    <div class="container gallery-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="photo">Photos</button>
+    </div>
+
+    <div class="gallery-grid" id="gallery">
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC03383~2.jpg','photo')">
+        <img src="assets/images/DSC03383~2.jpg" alt="Frame 01" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC03447~2.jpg','photo')">
+        <img src="assets/images/DSC03447~2.jpg" alt="Frame 02" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC03453~2.jpg','photo')">
+        <img src="assets/images/DSC03453~2.jpg" alt="Frame 03" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC09002.jpg','photo')">
+        <img src="assets/images/DSC09002.jpg" alt="Frame 04" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/DSC09912~2.jpg','photo')">
+        <img src="assets/images/DSC09912~2.jpg" alt="Frame 05" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/IMG_2698~2.jpg','photo')">
+        <img src="assets/images/IMG_2698~2.jpg" alt="Frame 06" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/IMG_3014~3.jpg','photo')">
+        <img src="assets/images/IMG_3014~3.jpg" alt="Frame 07" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/IMG_20260114_200329192~3.jpg','photo')">
+        <img src="assets/images/IMG_20260114_200329192~3.jpg" alt="Frame 08" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+      <div class="gallery-item photo" onclick="openLightbox('assets/images/Snapchat-1670874999.jpg','photo')">
+        <img src="assets/images/Snapchat-1670874999.jpg" alt="Frame 09" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-icon">↗</span></div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <span class="lightbox-close" onclick="closeLightbox()">×</span>
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="" alt="" style="display:none"/>
+        <video id="lightbox-vid" controls style="display:none"></video>
+      </div>
+    </div>
+
+    <!-- FILMS -->
+    <div class="films-drive container" data-scroll>
+      <div class="films-drive-inner">
+        <p class="films-label">Filmmaking</p>
+        <h3>Watch My <em>Films</em></h3>
+        <p class="films-desc">A curated collection of cinematic short films, reels and visual stories — each frame, a feeling.</p>
+        <a href="https://drive.google.com/drive/folders/1QfuvaV1WxDFEGdHLjxloQjUGf_GaItEl" target="_blank" class="films-btn">View All Films <span>↗</span></a>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES -->
-  <section id="services">
+  <section id="services" data-scroll>
     <div class="container">
       <span class="section-label">Services</span>
-      <h2>What I Do</h2>
+      <h2>What I <em>Do</em></h2>
       <div class="services-grid">
         <div class="service-card">
-          <span class="service-num">01</span>
+          <div class="service-top">
+            <span class="service-num">01</span>
+            <span class="service-tag">Stills</span>
+          </div>
           <h3>Photography</h3>
           <p>Portraits, events, street, editorial — stills that hold emotion long after the shutter closes.</p>
+          <div class="service-line"></div>
         </div>
         <div class="service-card">
-          <span class="service-num">02</span>
+          <div class="service-top">
+            <span class="service-num">02</span>
+            <span class="service-tag">Motion</span>
+          </div>
           <h3>Filmmaking</h3>
           <p>Short films, reels, brand videos — cinematic storytelling from concept to final cut.</p>
+          <div class="service-line"></div>
         </div>
         <div class="service-card">
-          <span class="service-num">03</span>
+          <div class="service-top">
+            <span class="service-num">03</span>
+            <span class="service-tag">Post</span>
+          </div>
           <h3>Post Production</h3>
           <p>Color grading, editing, sound design — polishing your vision to its finest form.</p>
+          <div class="service-line"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AI CAPTION GENERATOR -->
-  <section id="ai-caption">
+  <!-- AI TOOLS -->
+  <section id="ai-caption" data-scroll>
     <div class="container">
-      <span class="section-label">AI Tool</span>
-      <h2>Cinematic <em>Caption Generator</em></h2>
-      <div class="caption-widget">
-        <p class="caption-desc">Describe a mood, scene, or feeling — get a caption worthy of your frame.</p>
-        <div class="caption-input-row">
-          <input type="text" id="mood-input" placeholder="e.g. golden hour melancholy, rainy street loneliness..." />
-          <button id="generate-btn">Generate ↗</button>
+      <div class="ai-header">
+        <div>
+          <span class="section-label">AI Tools</span>
+          <h2>Powered by <em>Intelligence</em></h2>
         </div>
-        <div class="caption-result" id="caption-result">
-          <span class="caption-placeholder">Your cinematic caption will appear here...</span>
-        </div>
-        <div class="caption-copy" id="copy-btn" style="display:none;">Copy Caption ↗</div>
+        <span class="ai-badge">✦ Live</span>
       </div>
+
+      <div class="ai-tabs">
+        <button class="ai-tab active" data-tab="caption">Caption Generator</button>
+        <button class="ai-tab" data-tab="chat">Ask Me Anything</button>
+      </div>
+
+      <!-- CAPTION TAB -->
+      <div class="ai-panel active" id="tab-caption">
+        <div class="caption-widget">
+          <p class="caption-desc">Describe a mood, scene, or feeling — get a caption worthy of your frame.</p>
+          <div class="caption-input-row">
+            <input type="text" id="mood-input" placeholder="e.g. golden hour melancholy, rainy street loneliness..." />
+            <button id="generate-btn">Generate <span>↗</span></button>
+          </div>
+          <div class="caption-result" id="caption-result">
+            <span class="caption-placeholder">Your cinematic caption will appear here...</span>
+          </div>
+          <div class="caption-actions">
+            <div class="caption-copy" id="copy-btn" style="display:none;">Copy Caption ↗</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAT TAB -->
+      <div class="ai-panel" id="tab-chat">
+        <div class="chat-widget">
+          <p class="caption-desc">Curious about my work, process, or availability? Ask anything — I'll answer.</p>
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg bot">
+              <span>Hey! I'm Parth's AI. Ask me about his photography, filmmaking style, services, or availability. ✦</span>
+            </div>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="e.g. What's your photography style?" />
+            <button id="chat-send-btn">Send <span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" data-scroll>
     <div class="container contact-inner">
-      <span class="section-label">Contact</span>
-      <h2>Let's create <em>something</em></h2>
-      <div class="contact-links">
-        <a href="mailto:cineluxe1606@gmail.com">cineluxe1606@gmail.com</a>
-        <a href="tel:+918999507026">+91 8999507026</a>
-        <a href="https://instagram.com/paxth.jpg" target="_blank">@paxth.jpg</a>
+      <div class="contact-header">
+        <span class="section-label">Contact</span>
+        <h2>Let's create <em>something</em></h2>
+        <span class="avail-badge"><span class="avail-dot">●</span> Available for new projects</span>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- LINKS -->
+        <div class="contact-links-col">
+          <p class="contact-sub">Reach out directly</p>
+          <div class="contact-links">
+            <a href="mailto:cineluxe1606@gmail.com" class="contact-link-item">
+              <span class="contact-link-label">Email</span>
+              <span>cineluxe1606@gmail.com ↗</span>
+            </a>
+            <a href="tel:+918999507026" class="contact-link-item">
+              <span class="contact-link-label">Phone</span>
+              <span>+91 8999507026 ↗</span>
+            </a>
+            <a href="https://instagram.com/paxth.jpg" target="_blank" class="contact-link-item">
+              <span class="contact-link-label">Instagram</span>
+              <span>@paxth.jpg ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form-col">
+          <p class="contact-sub">Or drop a message</p>
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-field">
+                <input type="text" placeholder="Your name" id="form-name" required />
+              </div>
+              <div class="form-field">
+                <input type="email" placeholder="Your email" id="form-email" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder="Subject" id="form-subject" />
+            </div>
+            <div class="form-field">
+              <textarea placeholder="Tell me about your project..." id="form-message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message <span>↗</span></button>
+            <p class="form-status" id="form-status"></p>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 paxth.jpg — All rights reserved.</p>
+    <div class="footer-inner container">
+      <div class="footer-left">
+        <span class="footer-logo">paxth<em>.jpg</em></span>
+        <p>Capturing light. Crafting stories.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/paxth.jpg" target="_blank">Instagram ↗</a>
+        <a href="mailto:cineluxe1606@gmail.com">Email ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 paxth.jpg — All rights reserved.</p>
+      <p>Designed & Built with intention.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
