@@ -262,12 +262,14 @@ new IntersectionObserver((entries) => {
       document.querySelectorAll('[data-scroll]').forEach(el => obs.observe(el));
     })()
   : null;
-  // ── HERO TEXT SCRAMBLE ──
-const scrambleEl = document.querySelector('.hero-title');
-const finalText  = 'paxth.jpg';
-const chars      = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%&!?.';
+// ── HERO TEXT SCRAMBLE ──
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%&!?.';
+const finalText = 'paxth.jpg';
 
 function scramble() {
+  const scrambleEl = document.querySelector('.hero-title');
+  if (!scrambleEl) return;
+
   let iterations = 0;
   const total = finalText.length * 6;
 
@@ -275,10 +277,9 @@ function scramble() {
     scrambleEl.innerHTML = finalText
       .split('')
       .map((char, i) => {
-        if (char === ' ') return ' ';
-        if (iterations > i * 6) return char === '.' 
-          ? `<em>${char}</em>` 
-          : char;
+        if (iterations > i * 6) {
+          return char === '.' ? `<em>.jpg</em>`.replace('.jpg', char) : char;
+        }
         return `<span style="color:var(--amber);opacity:0.5">${chars[Math.floor(Math.random() * chars.length)]}</span>`;
       })
       .join('');
@@ -291,5 +292,7 @@ function scramble() {
   }, 40);
 }
 
-// run after loader hides
-setTimeout(scramble, 2600);
+// wait for loader to finish
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(scramble, 2800);
+});
