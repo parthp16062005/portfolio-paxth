@@ -1157,8 +1157,9 @@ footer {
 #loader.hide {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-
 .loader-inner {
   display: flex;
   flex-direction: column;
