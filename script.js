@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 setTimeout(() => {
   document.body.style.overflow = '';
   document.documentElement.style.overflow = '';
-}, 3000);
+}, 2000);
 window.addEventListener('load', () => {
   scramble();
 });
