@@ -229,23 +229,74 @@
         <button class="ai-tab" data-tab="chat">Ask Me Anything</button>
       </div>
 
-      <!-- CAPTION TAB -->
-      <div class="ai-panel active" id="tab-caption">
-        <div class="caption-widget">
-          <p class="caption-desc">Describe a mood, scene, or feeling — get a caption worthy of your frame.</p>
-          <div class="caption-input-row">
-            <input type="text" id="mood-input" placeholder="e.g. golden hour melancholy, rainy street loneliness..." />
-            <button id="generate-btn">Generate <span>↗</span></button>
-          </div>
-          <div class="caption-result" id="caption-result">
-            <span class="caption-placeholder">Your cinematic caption will appear here...</span>
-          </div>
-          <div class="caption-actions">
-            <div class="caption-copy" id="copy-btn" style="display:none;">Copy Caption ↗</div>
-          </div>
+<!-- CAPTION TAB -->
+<div class="ai-panel active" id="tab-caption">
+  <div class="caption-widget">
+
+    <div class="caption-modes">
+      <div class="caption-mode active" id="mode-text" onclick="switchMode('text')">
+        <span class="mode-icon">✍</span>
+        <div>
+          <p class="mode-title">Mood to Caption</p>
+          <p class="mode-sub">Describe a feeling or scene</p>
         </div>
       </div>
+      <div class="caption-mode" id="mode-image" onclick="switchMode('image')">
+        <span class="mode-icon">📷</span>
+        <div>
+          <p class="mode-title">Photo to Caption</p>
+          <p class="mode-sub">Upload your frame for AI analysis</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- TEXT MODE -->
+    <div class="caption-section" id="section-text">
+      <p class="caption-desc">Type a mood, scene, or emotion — get a cinematic caption for your frame.</p>
+      <div class="caption-input-row">
+        <input type="text" id="mood-input" placeholder="e.g. golden hour melancholy, rainy street loneliness..." />
+        <button id="generate-btn">Generate <span>↗</span></button>
+      </div>
+      <div class="caption-hints">
+        <span onclick="fillHint(this)">golden hour</span>
+        <span onclick="fillHint(this)">rainy night</span>
+        <span onclick="fillHint(this)">lonely city</span>
+        <span onclick="fillHint(this)">foggy morning</span>
+        <span onclick="fillHint(this)">melancholy</span>
+      </div>
+    </div>
+
+    <!-- IMAGE MODE -->
+    <div class="caption-section hidden" id="section-image">
+      <p class="caption-desc">Upload any photo — AI will analyse the mood, light, and emotion to write a caption.</p>
+      <div class="image-upload-area" id="upload-area">
+        <input type="file" id="image-upload" accept="image/*" style="display:none"/>
+        <div class="upload-placeholder" id="upload-placeholder" onclick="document.getElementById('image-upload').click()">
+          <span class="upload-big-icon">⬆</span>
+          <p>Click to upload your photo</p>
+          <span>JPG, PNG, WEBP supported</span>
+        </div>
+        <div class="image-preview-wrap" id="image-preview-wrap" style="display:none">
+          <img id="image-preview" src="" alt="preview"/>
+          <button id="remove-image" onclick="removeImage()">× Remove</button>
+        </div>
+      </div>
+      <div class="image-mood-row">
+        <input type="text" id="image-mood-input" placeholder="Optional: add a mood hint..." />
+        <button id="generate-image-btn">Analyse & Generate <span>↗</span></button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="caption-result" id="caption-result">
+      <span class="caption-placeholder">Your cinematic caption will appear here...</span>
+    </div>
+    <div class="caption-actions">
+      <div class="caption-copy" id="copy-btn" style="display:none;">Copy Caption ↗</div>
+    </div>
+
+  </div>
+</div>
       <!-- CHAT TAB -->
       <div class="ai-panel" id="tab-chat">
         <div class="chat-widget">
