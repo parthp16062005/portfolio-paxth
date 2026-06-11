@@ -297,3 +297,4 @@ if (audioToggle) {
     }
   });
 }
+link.style.color = '#b5451b';
