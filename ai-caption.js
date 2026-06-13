@@ -254,7 +254,7 @@ async function sendChat() {
         'Authorization': `Bearer ${GROQ_KEY}`
       },
       body: JSON.stringify({
-        model: 'llama-3.1-8b-instant',
+        model: 'llama-3.3-70b',
         messages: chatHistory,
         max_tokens: 200,
         temperature: 0.75
