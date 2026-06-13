@@ -1,4 +1,4 @@
-const GROQ_KEY = "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";
+const GROQ_KEY = "csk-6ynvw43eh9mtfhwy24x92dd8dx26mmmd54t986hnv6n8txfh";
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // ── ELEMENTS ──
